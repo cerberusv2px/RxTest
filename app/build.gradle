@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion root.compileSdkVersion
+    defaultConfig {
+        applicationId "com.example.sujin.rxtest"
+        minSdkVersion root.minSdkVersion
+        targetSdkVersion root.targetSdkVersion
+        versionCode root.versionCode
+        versionName root.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation supportDependencies.design
+    implementation supportDependencies.recyclerView
+    implementation supportDependencies.appCompat
+    implementation contraintLayoutDependencies.contraintLayout
+
+    implementation rxDependencies.rxAndroid
+    implementation rxDependencies.rxJava
+    implementation rxDependencies.rxBinding
+
+    implementation daggerDependencies.dagger
+    annotationProcessor daggerDependencies.daggerCompiler
+
+    testImplementation test.jUnit
+    androidTestImplementation test.testRunner
+    androidTestImplementation test.testExpresso
+}

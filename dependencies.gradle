@@ -1,0 +1,47 @@
+ext {
+    root = [
+            minSdkVersion    : 21,
+            targetSdkVersion : 26,
+            compileSdkVersion: 26,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    supportVersion = '27.0.2'
+
+    supportDependencies = [
+            design      : "com.android.support:design:$supportVersion",
+            recyclerView: "com.android.support:recyclerview-v7:$supportVersion",
+            appCompat   : "com.android.support:appcompat-v7:$supportVersion"
+    ]
+
+    contraintLayoutVersion = '1.0.2'
+
+    contraintLayoutDependencies = [
+            contraintLayout: "com.android.support.constraint:constraint-layout:$contraintLayoutVersion"
+    ]
+
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.5'
+    rxBindingVersion = '2.0.0'
+
+    rxDependencies = [
+            rxAndroid: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxJava   : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxBinding: "com.jakewharton.rxbinding2:rxbinding:$rxBindingVersion"
+    ]
+
+    daggerVersion = '2.13'
+
+    daggerDependencies = [
+            dagger        : "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion"
+    ]
+
+    test = [
+            jUnit       : "junit:junit:4.12",
+            testRunner  : "com.android.support.test:runner:1.0.1",
+            testExpresso: "com.android.support.test.espresso:espresso-core:3.0.1"
+    ]
+
+}
